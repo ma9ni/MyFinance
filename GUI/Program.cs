@@ -16,6 +16,18 @@ namespace GUI
           //  ctx.SaveChanges();
             Console.WriteLine("Base crée");
             Console.ReadKey();
+
+            //Console du Gestionnaire de package 
+
+            //generer a l'aide de Commande  Enable-Migrations
+
+            //Pour Ajouter Migration : Add-Migration nom-migration
+
+            //exemple Add-Migration Adress
+            // Update DataBase   update DataBase selon la derniére Migration
+
+            //Update DataBase TargetMigration
+
         }
     }
 }

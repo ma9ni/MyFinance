@@ -17,5 +17,6 @@ namespace Domaine
         public virtual Category Category { get; set; }
         //? nullable
         public int? CategoryId { get; set; }
+     
     }
 }

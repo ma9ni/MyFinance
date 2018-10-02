@@ -14,22 +14,22 @@ namespace Data.Migrations
 
         //Pour Ajouter Migration : Add-Migration nom-migration
 
-            //exemple Add-Migration Adress
-            // Update DataBase   update DataBase selon la derniére Migration
+        //exemple Add-Migration Adress
+        // Update DataBase   update DataBase selon la derniére Migration
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "Data.MyFinanceContext";
         }
-        
+
         protected override void Seed(Data.MyFinanceContext context)
         {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            context.Categories.AddOrUpdate<Category>(c =>c.Name,
-                                                              new Category { Name="Matériels"}
+            context.Categories.AddOrUpdate<Category>(c => c.Name,
+                                                              new Category { Name = "Matériels" }
                                                      );
         }
     }

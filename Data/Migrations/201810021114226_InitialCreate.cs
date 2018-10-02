@@ -29,9 +29,9 @@ namespace Data.Migrations
                         imageName = c.String(),
                         CategoryId = c.Int(),
                         Herbs = c.String(),
-                        City = c.String(),
                         LabName = c.String(),
-                        StreetAddress = c.String(),
+                        Adress_City = c.String(),
+                        Adress_StreetAddress = c.String(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.ProductId)
@@ -42,27 +42,27 @@ namespace Data.Migrations
                 "dbo.Providers",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        Username = c.String(),
+                        ProviderKey = c.Int(nullable: false, identity: true),
+                        Username = c.Int(nullable: false),
                         Password = c.String(),
                         ConfirmPassword = c.String(),
                         DateCreated = c.DateTime(nullable: false),
                         IsApproved = c.Boolean(nullable: false),
                         Email = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.ProviderKey);
             
             CreateTable(
                 "dbo.ProviderProducts",
                 c => new
                     {
-                        Provider_Id = c.Int(nullable: false),
+                        Provider_ProviderKey = c.Int(nullable: false),
                         Product_ProductId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Provider_Id, t.Product_ProductId })
-                .ForeignKey("dbo.Providers", t => t.Provider_Id, cascadeDelete: true)
+                .PrimaryKey(t => new { t.Provider_ProviderKey, t.Product_ProductId })
+                .ForeignKey("dbo.Providers", t => t.Provider_ProviderKey, cascadeDelete: true)
                 .ForeignKey("dbo.Products", t => t.Product_ProductId, cascadeDelete: true)
-                .Index(t => t.Provider_Id)
+                .Index(t => t.Provider_ProviderKey)
                 .Index(t => t.Product_ProductId);
             
         }
@@ -70,10 +70,10 @@ namespace Data.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.ProviderProducts", "Product_ProductId", "dbo.Products");
-            DropForeignKey("dbo.ProviderProducts", "Provider_Id", "dbo.Providers");
+            DropForeignKey("dbo.ProviderProducts", "Provider_ProviderKey", "dbo.Providers");
             DropForeignKey("dbo.Products", "CategoryId", "dbo.Categories");
             DropIndex("dbo.ProviderProducts", new[] { "Product_ProductId" });
-            DropIndex("dbo.ProviderProducts", new[] { "Provider_Id" });
+            DropIndex("dbo.ProviderProducts", new[] { "Provider_ProviderKey" });
             DropIndex("dbo.Products", new[] { "CategoryId" });
             DropTable("dbo.ProviderProducts");
             DropTable("dbo.Providers");

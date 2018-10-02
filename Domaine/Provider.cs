@@ -8,8 +8,8 @@ namespace Domaine
 {
     public class Provider
     {
-        public int Id { get; set; }
-        public string Username { get; set; }
+        public int ProviderKey { get; set; }
+        public int Username { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public DateTime DateCreated { get; set; }
