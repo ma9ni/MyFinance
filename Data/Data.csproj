@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201809251038483_InitialCreate.Designer.cs">
       <DependentUpon>201809251038483_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810020922385_Adress.cs" />
+    <Compile Include="Migrations\201810020922385_Adress.Designer.cs">
+      <DependentUpon>201810020922385_Adress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyFinanceContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809251038483_InitialCreate.resx">
       <DependentUpon>201809251038483_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810020922385_Adress.resx">
+      <DependentUpon>201810020922385_Adress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
