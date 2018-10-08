@@ -15,12 +15,15 @@ namespace Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Provider> Providers { get; set; }
+        public DbSet<Facture> Factures { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // base.OnModelCreating(modelBuilder);
             // modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
             modelBuilder.Conventions.Add(new KeyConvention());
+            modelBuilder.Conventions.Add(new DataTime2Convetion());
 
         }
     }

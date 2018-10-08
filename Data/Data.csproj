@@ -49,10 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conventions\DataTime2Convetion.cs" />
     <Compile Include="Conventions\KeyConvention.cs" />
-    <Compile Include="Migrations\201810021114226_InitialCreate.cs" />
-    <Compile Include="Migrations\201810021114226_InitialCreate.Designer.cs">
-      <DependentUpon>201810021114226_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201810080917501_Annotation.cs" />
+    <Compile Include="Migrations\201810080917501_Annotation.Designer.cs">
+      <DependentUpon>201810080917501_Annotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810081007598_DateTime.cs" />
+    <Compile Include="Migrations\201810081007598_DateTime.Designer.cs">
+      <DependentUpon>201810081007598_DateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810081018446_Herbs.cs" />
+    <Compile Include="Migrations\201810081018446_Herbs.Designer.cs">
+      <DependentUpon>201810081018446_Herbs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810081100089_Facture.cs" />
+    <Compile Include="Migrations\201810081100089_Facture.Designer.cs">
+      <DependentUpon>201810081100089_Facture.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyFinanceContext.cs" />
@@ -69,8 +82,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810021114226_InitialCreate.resx">
-      <DependentUpon>201810021114226_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810080917501_Annotation.resx">
+      <DependentUpon>201810080917501_Annotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810081007598_DateTime.resx">
+      <DependentUpon>201810081007598_DateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810081018446_Herbs.resx">
+      <DependentUpon>201810081018446_Herbs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810081100089_Facture.resx">
+      <DependentUpon>201810081100089_Facture.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,6 +53,8 @@
     <Compile Include="Bilogical.cs" />
     <Compile Include="Categorie.cs" />
     <Compile Include="Chemical.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Facture.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />

@@ -8,6 +8,6 @@ namespace Domaine
 {
     public class Bilogical:Product
     {
-        public string Herbs { get; set; }
+        public int Herbel { get; set; }
     }
 }

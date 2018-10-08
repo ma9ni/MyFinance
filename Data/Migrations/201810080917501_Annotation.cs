@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Annotation : DbMigration
     {
         public override void Up()
         {
@@ -23,7 +23,7 @@ namespace Data.Migrations
                         ProductId = c.Int(nullable: false, identity: true),
                         DateProd = c.DateTime(),
                         Description = c.String(),
-                        Name = c.String(),
+                        Name = c.String(nullable: false, maxLength: 50),
                         price = c.Double(nullable: false),
                         Quantity = c.Int(nullable: false),
                         imageName = c.String(),
@@ -44,11 +44,10 @@ namespace Data.Migrations
                     {
                         ProviderKey = c.Int(nullable: false, identity: true),
                         Username = c.Int(nullable: false),
-                        Password = c.String(),
-                        ConfirmPassword = c.String(),
+                        Password = c.String(nullable: false),
                         DateCreated = c.DateTime(nullable: false),
                         IsApproved = c.Boolean(nullable: false),
-                        Email = c.String(),
+                        Email = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ProviderKey);
             
