@@ -12,7 +12,7 @@ namespace Data.MyConfigurations
             ToTable("MyCategories");
 
             HasKey(a => a.CategoryId);
-            //la propretie Name est obligatoire est avoire taille 50 
+            //la propretie Name est obligatoire et avoire taille 50 
             Property(a => a.Name).HasMaxLength(50).IsRequired();
         }
     }
