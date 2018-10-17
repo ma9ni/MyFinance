@@ -1,4 +1,5 @@
 ﻿using Data.Conventions;
+using Data.MyConfigurations;
 using Domaine;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,6 +25,12 @@ namespace Data
             // modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
             modelBuilder.Conventions.Add(new KeyConvention());
             modelBuilder.Conventions.Add(new DataTime2Convetion());
+
+
+            //Instancier les fluent API
+            modelBuilder.Configurations.Add(new AdressConfigurations());
+            modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new ProductConfigurations());
 
         }
     }

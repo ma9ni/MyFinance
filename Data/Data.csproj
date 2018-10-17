@@ -67,7 +67,14 @@
     <Compile Include="Migrations\201810081100089_Facture.Designer.cs">
       <DependentUpon>201810081100089_Facture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810170938117_FluentApp.cs" />
+    <Compile Include="Migrations\201810170938117_FluentApp.Designer.cs">
+      <DependentUpon>201810170938117_FluentApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyConfigurations\AdressConfigurations.cs" />
+    <Compile Include="MyConfigurations\CategoryConfiguration.cs" />
+    <Compile Include="MyConfigurations\ProductConfigurations.cs" />
     <Compile Include="MyFinanceContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -94,7 +101,11 @@
     <EmbeddedResource Include="Migrations\201810081100089_Facture.resx">
       <DependentUpon>201810081100089_Facture.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810170938117_FluentApp.resx">
+      <DependentUpon>201810170938117_FluentApp.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
