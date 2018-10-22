@@ -1,25 +1,38 @@
-﻿using Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domaine;
+﻿using Domaine;
+using Data.Infrastructure;
+using Infrastructure;
+using MyFinance.Data.Infrastructure;
+using ServicePattern;
 
 namespace Service
 {
-    public class ServiceCategory:IserviceCategory
+    public class ServiceCategory: Service<Category>, IserviceCategory
     {
-        MyFinanceContext ctx = new MyFinanceContext();
+        //    MyFinanceContext ctx = new MyFinanceContext();
 
-        public void addCategory(Category category)
+        static IDatabaseFactory dbf = new DatabaseFactory();
+        static IUnitOfWork uow = new UnitOfWork(dbf);
+
+        //  RepositoryBase<Category> repo = new RepositoryBase<Category>(dbf);
+
+        public ServiceCategory(): base(uow)
         {
-            ctx.Categories.Add(category);
+
         }
 
+
+        public void addCategory(Category NewElem) 
+        {
+
+            //  dbf.DataContext.Categories.Add(NewElem);
+            //uow.getRepository<Category>().Add(NewElem);
+
+        }
         public void Commit()
         {
-            ctx.SaveChanges();
+
+            uow.Commit();
         }
     }
 }
+

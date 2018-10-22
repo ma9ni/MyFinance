@@ -51,6 +51,13 @@
   <ItemGroup>
     <Compile Include="Conventions\DataTime2Convetion.cs" />
     <Compile Include="Conventions\KeyConvention.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDatabaseFactory.cs" />
+    <Compile Include="Infrastructure\IRepositoryBase.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Migrations\201810080917501_Annotation.cs" />
     <Compile Include="Migrations\201810080917501_Annotation.Designer.cs">
       <DependentUpon>201810080917501_Annotation.cs</DependentUpon>
